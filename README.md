@@ -1,5 +1,7 @@
-tooltip
+Tooltip
 =======
+
+Tooltip data from a static text / an element (id) / a function return / ajax get from url
 
 <h1>Usage</h1>
   <p>The tooltip plugin generates content and markup on demand, and by default places tooltips after their trigger element. <br>
