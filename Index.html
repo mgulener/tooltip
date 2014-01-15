@@ -1,0 +1,187 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Tooltip</title>
+<link rel="stylesheet/less" type="text/css" href="Styles/Style.less" />
+<link rel="stylesheet/less" type="text/css" href="Styles/Theme.less" />
+<style>
+.table td, .table th { background-color: #fff!important }
+.table { border-collapse: collapse!important }
+.table-bordered th, .table-bordered td { border: 1px solid #ddd!important }
+}
+*, *:before, *:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box
+}
+table {
+	max-width: 100%;
+	background-color: transparent
+}
+th { text-align: left }
+.table {
+	width: 100%;
+	margin-bottom: 20px
+}
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
+	padding: 8px;
+	line-height: 1.428571429;
+	vertical-align: top;
+	border-top: 1px solid #ddd
+}
+.table>thead>tr>th {
+	vertical-align: bottom;
+	border-bottom: 2px solid #ddd
+}
+.table>caption+thead>tr:first-child>th, .table>colgroup+thead>tr:first-child>th, .table>thead:first-child>tr:first-child>th, .table>caption+thead>tr:first-child>td, .table>colgroup+thead>tr:first-child>td, .table>thead:first-child>tr:first-child>td { border-top: 0 }
+.table>tbody+tbody { border-top: 2px solid #ddd }
+.table .table { background-color: #fff }
+.table-condensed>thead>tr>th, .table-condensed>tbody>tr>th, .table-condensed>tfoot>tr>th, .table-condensed>thead>tr>td, .table-condensed>tbody>tr>td, .table-condensed>tfoot>tr>td { padding: 5px }
+.table-bordered { border: 1px solid #ddd }
+.table-bordered>thead>tr>th, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>tbody>tr>td, .table-bordered>tfoot>tr>td { border: 1px solid #ddd }
+.table-bordered>thead>tr>th, .table-bordered>thead>tr>td { border-bottom-width: 2px }
+.table-striped>tbody>tr:nth-child(odd)>td, .table-striped>tbody>tr:nth-child(odd)>th { background-color: #f9f9f9 }
+.table-hover>tbody>tr:hover>td, .table-hover>tbody>tr:hover>th { background-color: #f5f5f5 }
+table col[class*="col-"] {
+	position: static;
+	display: table-column;
+	float: none
+}
+table td[class*="col-"], table th[class*="col-"] {
+	display: table-cell;
+	float: none
+}
+.table>thead>tr>.active, .table>tbody>tr>.active, .table>tfoot>tr>.active, .table>thead>.active>td, .table>tbody>.active>td, .table>tfoot>.active>td, .table>thead>.active>th, .table>tbody>.active>th, .table>tfoot>.active>th { background-color: #f5f5f5 }
+.table-hover>tbody>tr>.active:hover, .table-hover>tbody>.active:hover>td, .table-hover>tbody>.active:hover>th { background-color: #e8e8e8 }
+.table>thead>tr>.success, .table>tbody>tr>.success, .table>tfoot>tr>.success, .table>thead>.success>td, .table>tbody>.success>td, .table>tfoot>.success>td, .table>thead>.success>th, .table>tbody>.success>th, .table>tfoot>.success>th { background-color: #dff0d8 }
+.table-hover>tbody>tr>.success:hover, .table-hover>tbody>.success:hover>td, .table-hover>tbody>.success:hover>th { background-color: #d0e9c6 }
+.table>thead>tr>.danger, .table>tbody>tr>.danger, .table>tfoot>tr>.danger, .table>thead>.danger>td, .table>tbody>.danger>td, .table>tfoot>.danger>td, .table>thead>.danger>th, .table>tbody>.danger>th, .table>tfoot>.danger>th { background-color: #f2dede }
+.table-hover>tbody>tr>.danger:hover, .table-hover>tbody>.danger:hover>td, .table-hover>tbody>.danger:hover>th { background-color: #ebcccc }
+.table>thead>tr>.warning, .table>tbody>tr>.warning, .table>tfoot>tr>.warning, .table>thead>.warning>td, .table>tbody>.warning>td, .table>tfoot>.warning>td, .table>thead>.warning>th, .table>tbody>.warning>th, .table>tfoot>.warning>th { background-color: #fcf8e3 }
+.table-hover>tbody>tr>.warning:hover, .table-hover>tbody>.warning:hover>td, .table-hover>tbody>.warning:hover>th { background-color: #faf2cc }
+</style>
+</head>
+
+<body>
+<div class="site">
+  <h1>Example</h1>
+  <div class="tabs"> <a class="current" rel="positions">Position</a> <a rel="themes">Theme</a> <a rel="datas">Data</a> <a rel="trigger">Trigger</a>
+    <div class="clear"></div>
+  </div>
+  <div id="positions" class="tabs-content">
+    <div class="content"><a rel="tooltip" title="<strong>Position : </strong>Top" data-theme="light" data-placement="top"><strong>Top : </strong> Mouse hover this area</a></div>
+    <div class="content"><a rel="tooltip" title="<strong>Position : </strong>Right" data-theme="light" data-placement="right"><strong>Right : </strong> Mouse hover this area</a></div>
+    <div class="content"><a rel="tooltip" title="<strong>Position : </strong>Bottom" data-theme="light" data-placement="bottom"><strong>Bottom : </strong> Mouse hover this area</a></div>
+    <div class="content"><a rel="tooltip" title="<strong>Position : </strong>Left" data-theme="light" data-placement="left"><strong>Left : </strong> Mouse hover this area</a></div>
+  </div>
+  <div id="themes" class="hide tabs-content">
+    <div class="content"><strong>Dark : </strong> <a rel="tooltip" title="<strong>Theme : </strong>Dark" data-theme="dark">Mouse hover this area</a></div>
+    <div class="content"><strong>Light : </strong> <a rel="tooltip" title="<strong>Theme : </strong>Light" data-theme="light">Mouse hover this area</a></div>
+    <div class="content"><strong>Blue : </strong> <a rel="tooltip" title="<strong>Theme : </strong>Blue" data-theme="blue">Mouse hover this area</a></div>
+    <div class="content"><strong>Red : </strong> <a rel="tooltip" title="<strong>Theme : </strong>Red" data-theme="red">Mouse hover this area</a></div>
+  </div>
+  <div id="datas" class="hide tabs-content">
+    <div class="content"><strong>Static Text : </strong> <a rel="tooltip" title="This is a static text.">Mouse hover this area</a></div>
+    <div class="content"><strong>Element ID : </strong> <a rel="tooltip" title="#elementId" data-tooltip-type="id">Mouse hover this area</a>
+      <p>&lt;div id=&quot;ElementId&quot;&gt;This text is #ElementId text&lt;/div&gt; </p>
+    </div>
+    <div class="content"><strong>Function Return Value : </strong> <a rel="tooltip" title="Total(4,5)" data-tooltip-type="function">Mouse hover this area</a>
+      <p>function Total(x,y) { return x+y}<br>
+        Total(4,5)</p>
+    </div>
+    <div class="content"><strong>Ajax Url Data : </strong> <a rel="tooltip" title="data.html" data-tooltip-type="url">Mouse hover this area</a> </div>
+  </div>
+  <div id="trigger" class="hide tabs-content">
+    <div class="content"><strong>Focus : </strong>
+      <input type="text" rel="tooltip" title="Title" id="input">
+    </div>
+    <div class="content"><strong>Hover : </strong>
+      <input type="text" rel="tooltip" title="Title" id="input2">
+    </div>
+  </div>
+  <h1>Usage</h1>
+  <p>The tooltip plugin generates content and markup on demand, and by default places tooltips after their trigger element. <br>
+    <br>
+    Trigger the tooltip via JavaScript:</p>
+  <pre><code>$('#example').tooltip(options)</code></pre>
+  <h1>Markup</h1>
+  <p>The generated markup of a tooltip is rather simple, though it does require a position (by default, set to <strong>top</strong> by the plugin).</p>
+  <pre><code>&lt;div class="tooltip"&gt;
+ &lt;div class="tooltip-inner"&gt;Tooltip!&lt;/div&gt;
+ &lt;div class="tooltip-arrow"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<h1>Options</h1>
+<p>Options can be passed via data attributes or JavaScript. For data attributes, append the option name to <strong>data-</strong>, as in <strong>data-animation=""</strong>.</p>
+<table class="table table-bordered table-striped">
+        <thead>
+         <tr>
+           <th style="width: 100px;">Name</th>
+           <th style="width: 100px;">type</th>
+           <th style="width: 50px;">default</th>
+           <th>description</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+           <td>html</td>
+           <td>boolean</td>
+           <td>false</td>
+           <td>Insert HTML into the tooltip. If false, jQuery's text method will be used to insert content into the DOM. Use text if you're worried about XSS attacks.</td>
+         </tr>
+         <tr>
+           <td>placement</td>
+           <td>string | function</td>
+           <td>'top'</td>
+           <td>how to position the tooltip - top | bottom | left | right | auto. <br> When "auto" is specified, it will dynamically reorient the tooltip. For example, if placement is "auto left", the tooltip will display to the left when possible, otherwise it will display right.</td>
+         </tr>
+         <tr>
+           <td>title</td>
+           <td>string | function</td>
+           <td>''</td>
+           <td>default title value if title attribute isn't present</td>
+         </tr>
+         <tr>
+           <td>trigger</td>
+           <td>string</td>
+           <td>'hover focus'</td>
+           <td>how tooltip is triggered - click | hover | focus | manual. You may pass multiple triggers; separate them with a space.</td>
+         </tr>
+         <tr>
+           <td>delay</td>
+           <td>number | object</td>
+           <td>0</td>
+           <td>
+            <p>delay showing and hiding the tooltip (ms) - does not apply to manual trigger type</p>
+            <p>If a number is supplied, delay is applied to both hide/show</p>
+            <p>Object structure is: <code>delay: { show: 500, hide: 100 }</code></p>
+           </td>
+         </tr>
+        </tbody>
+      </table>
+</div>
+<div id="elementId" style="display:none;">This text is #ElementId text</div>
+<script type="text/javascript" src="Js/less-1.6.0.min.js"></script> 
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script> 
+<script src="Js/ui-tooltip.js"></script> 
+<script>
+	$('a[rel=tooltip]').tooltip();
+	$('#input').tooltip({
+		trigger : "focus"
+	});
+	$('#input2').tooltip({
+		trigger : "hover"
+	});
+	function Total(x,y) {
+		return x+y
+	}
+	// tabs
+	$('.tabs a').click(function(){
+		$('.tabs-content').hide();
+		$('#'+$(this).attr("rel")).show();
+		$('.tabs a').removeClass("current");
+		$(this).addClass("current");
+	});
+</script>
+</body>
+</html>

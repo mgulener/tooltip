@@ -1,0 +1,148 @@
+/* variables */
+@dark: rgba(39,33,35,0.9);
+@light: rgba(230,230,230,0.9);
+@blue: rgba(44,118,152,0.9);
+@red: rgba(152,44,44,0.9);
+@radius: 5px;
+
+.tooltip {
+	position: absolute;
+	z-index: 1020;
+	display: block;
+	visibility: visible;
+	padding: 5px;
+	font-size: 11px;
+	opacity: 0;
+	filter: alpha(opacity=0);
+	
+	&.in {
+		opacity: .9;
+		filter: alpha(opacity=90);
+	}
+	&.top { 
+		margin-top: -2px;
+		
+		.tooltip-arrow {
+			bottom: 0;
+			left: 50%;
+			margin-left: -@radius;
+			border-left: @radius solid transparent;
+			border-right: @radius solid transparent;
+		}
+	}
+	&.right {
+		margin-left: 2px;
+		
+		.tooltip-arrow {
+			top: 50%;
+			left: 0;
+			margin-top: -@radius;
+			border-top: @radius solid transparent;
+			border-bottom: @radius solid transparent;
+		}
+	}
+	&.bottom {
+		margin-top: 2px;
+		
+		.tooltip-arrow {
+			top: 0;
+			left: 50%;
+			margin-left: -@radius;
+			border-left: @radius solid transparent;
+			border-right: @radius solid transparent;
+		}
+	}
+	&.left {
+		margin-left: -2px;
+		
+		.tooltip-arrow {
+			top: 50%;
+			right: 0;
+			margin-top: -@radius;
+			border-top: @radius solid transparent;
+			border-bottom: @radius solid transparent;
+		} 
+	}
+}
+/* dark theme */
+.dark.top .tooltip-arrow {
+	border-top: @radius solid @dark;
+}
+.dark.left .tooltip-arrow {
+	border-left: @radius solid @dark;
+}
+.dark.bottom .tooltip-arrow {
+	border-bottom: @radius solid @dark;
+}
+.dark.right .tooltip-arrow {
+	border-right: @radius solid @dark;
+}
+.dark .tooltip-inner {
+	background-color: @dark;
+	color: #ffffff;
+}
+/* light theme */
+.light.top .tooltip-arrow {
+	border-top: @radius solid @light;
+}
+.light.left .tooltip-arrow {
+	border-left: @radius solid @light;
+}
+.light.bottom .tooltip-arrow {
+	border-bottom: @radius solid @light;
+}
+.light.right .tooltip-arrow {
+	border-right: @radius solid @light;
+}
+.light .tooltip-inner {
+	background-color: @light;
+	color: #333333;
+}
+/* blue theme */
+.blue.top .tooltip-arrow {
+	border-top: @radius solid @blue;
+}
+.blue.left .tooltip-arrow {
+	border-left: @radius solid @blue;
+}
+.blue.bottom .tooltip-arrow {
+	border-bottom: @radius solid @blue;
+}
+.blue.right .tooltip-arrow {
+	border-right: @radius solid @blue;
+}
+.blue .tooltip-inner {
+	background-color: @blue;
+	color: #ffffff;
+}
+/* red theme */
+.red.top .tooltip-arrow {
+	border-top: @radius solid @red;
+}
+.red.left .tooltip-arrow {
+	border-left: @radius solid @red;
+}
+.red.bottom .tooltip-arrow {
+	border-bottom: @radius solid @red;
+}
+.red.right .tooltip-arrow {
+	border-right: @radius solid @red;
+}
+.red .tooltip-inner {
+	background-color: @red;
+	color: #ffffff;
+}
+.tooltip-inner {
+	max-width: 200px;
+	padding: 3px 8px;
+	text-align: center;
+	text-decoration: none;
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+	border-radius: @radius
+}
+.tooltip-arrow {
+	position: absolute;
+	width: 0;
+	height: 0
+}
